@@ -1,0 +1,6 @@
+[submodule "WETC_buyback_backend"]
+	path = WETC_buyback_backend
+	url = https://github.com/WiggidyW/WETC_buyback_backend
+[submodule "WETC_parser"]
+	path = WETC_parser
+	url = https://github.com/WiggidyW/WETC_parser
