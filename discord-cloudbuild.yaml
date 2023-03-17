@@ -9,8 +9,8 @@
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/wetc-buyback-docker:latest'
+  - 'gcr.io/$PROJECT_ID/wetc-buyback-discord:latest'
   - '-f'
   - 'Discord.Dockerfile'
   - '.'
-images: ['gcr.io/$PROJECT_ID/wetc-buyback-docker:latest']
+images: ['gcr.io/$PROJECT_ID/wetc-buyback-discord:latest']
