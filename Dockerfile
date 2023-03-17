@@ -20,7 +20,20 @@ WORKDIR /root/
 COPY --from=0 /root/WETC_buyback_backend/target/release/wetc_buyback_backend backend.exe
 COPY --from=1 /root/WETC_parser/parser.exe .
 COPY ./WETC_buyback_discord/main.py .
+
+# Install python and python dependencies
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install --no-cache-dir discord
+
+# Remove pip3 and APK
+# RUN apk del py3-pip
+# RUN rm -rf /root/.cache/pip3
+# RUN rm -f /sbin./apk
+# RUN rm -rf /etc/apk
+# RUN rm -rf /lib/apk
+# RUN rm -rf /usr/share/apk
+# RUN rm -rf /var/lib/apk
+# These commands actually make the image larger somehow
+
 RUN chmod +x ./main.py
 CMD ["./main.py"]
