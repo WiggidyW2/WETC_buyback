@@ -1,0 +1,16 @@
+﻿steps:
+- name: 'gcr.io/cloud-builders/git'
+  args:
+  - 'submodule'
+  - 'update'
+  - '--init'
+  - '--recursive'
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/wetc-buyback-docker:latest'
+  - '-f'
+  - 'Discord.Dockerfile'
+  - '.'
+images: ['gcr.io/$PROJECT_ID/wetc-buyback-docker:latest']
