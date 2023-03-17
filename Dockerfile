@@ -13,10 +13,10 @@ WORKDIR /root/WETC_parser/
 COPY ./WETC_parser/go.mod .
 COPY ./WETC_parser/go.sum .
 COPY ./WETC_parser/main.go .
-RUN go build -o parser .
+RUN go build -o parser.exe .
 
 FROM frolvlad/alpine-glibc:alpine-3.17
 WORKDIR /root/
 COPY --from=0 /root/WETC_buyback_backend/target/release/wetc_buyback_backend bin
-COPY --from=1 /root/WETC_parser/parser .
+COPY --from=1 /root/WETC_parser/parser.exe .
 CMD ["./bin"]

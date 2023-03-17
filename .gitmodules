@@ -4,3 +4,6 @@
 [submodule "WETC_parser"]
 	path = WETC_parser
 	url = https://github.com/WiggidyW/WETC_parser
+[submodule "WETC_buyback_discord"]
+	path = WETC_buyback_discord
+	url = https://github.com/WiggidyW/WETC_buyback_discord
