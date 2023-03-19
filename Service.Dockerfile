@@ -17,7 +17,7 @@ RUN go build -o parser.exe .
 
 FROM frolvlad/alpine-glibc:alpine-3.17
 WORKDIR /root/
-COPY --from=0 /root/WETC_buyback_backend/target/release/wetc_buyback_backend bin
+COPY --from=0 /root/WETC_buyback_backend/target/release/service bin
 COPY --from=1 /root/WETC_parser/parser.exe .
 RUN chmod +x ./bin
 CMD ["./bin"]
