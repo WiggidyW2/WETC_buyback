@@ -17,7 +17,7 @@ RUN go build -o parser.exe .
 
 FROM frolvlad/alpine-glibc:alpine-3.17
 WORKDIR /root/
-COPY --from=0 /root/WETC_buyback_backend/target/release/wetc_buyback_backend backend.exe
+COPY --from=0 /root/WETC_buyback_backend/target/release/shell backend.exe
 COPY --from=1 /root/WETC_parser/parser.exe .
 COPY ./WETC_buyback_discord/main.py .
 # Install python and python dependencies
