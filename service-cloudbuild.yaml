@@ -13,4 +13,18 @@ steps:
   - '-f'
   - 'Service.Dockerfile'
   - '.'
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'push'
+  - 'gcr.io/$PROJECT_ID/wetc-buyback-service:latest'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+    - 'run'
+    - 'deploy'
+    - 'wetc-buyback-service'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/wetc-buyback-service:latest'
+    - '--region'
+    - 'us-central1'
 images: ['gcr.io/$PROJECT_ID/wetc-buyback-service:latest']
